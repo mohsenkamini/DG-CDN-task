@@ -44,10 +44,10 @@ Hosts:
 |---|---|
 | Edge Server | 172.25.2.1 |
 | nginx-reverse-proxy | 172.25.2.2 |
-| elasticsearch | 172.25.2.3 |
+| elasticsearch(es01) | 172.25.2.3 |
 | kibana | 172.25.2.4 |
 | nginx-web-server | 172.25.2.5 |
-
+| elasticsearch(es02) | 172.25.2.6 |
 
 
 Other instances will receive their IP addresses from DHCP.
