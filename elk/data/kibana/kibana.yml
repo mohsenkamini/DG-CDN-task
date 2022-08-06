@@ -1,0 +1,19 @@
+#
+# ** THIS IS AN AUTO-GENERATED FILE **
+#
+
+# Default Kibana configuration for docker target
+server.host: "0"
+server.shutdownTimeout: "5s"
+elasticsearch.hosts: [ "http://siem.hoopad.local:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
+server.publicBaseUrl: https://siem.hoopad.local:5601
+xpack.encryptedSavedObjects:
+  encryptionKey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINRwVlxw7242xHQRgcQjAY6uRzFno1KvyxKjnnnC5Eil"
+xpack.security.authc.providers:
+  anonymous.anonymous1:
+    order: 0
+    credentials: "elasticsearch_anonymous_user"
+  basic.basic1:
+    order: 1
+xpack.security.sameSiteCookies: "None"

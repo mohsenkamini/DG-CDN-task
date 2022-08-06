@@ -1,0 +1,31 @@
+version: '3.6'
+
+services:
+  fb01:
+    image: registry.wanpad.ir:443/elk/custom-filebeat:${VERSION}
+    restart: unless-stopped
+    container_name: fb01
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/data01/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers/:/var/lib/docker/containers/:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log:/var/myhost.logs:ro
+    networks:
+      - elastic
+    dns:
+      - ${DNS}
+    ports:
+      - 2055:2055/udp
+volumes:
+  filebeatdashboards:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
