@@ -56,4 +56,12 @@ Other instances will receive their IP addresses from DHCP.
 ### Implementation
 
 
+~~~
+./network-create.sh
+
+if [ `grep 'vm.max_map_count' /etc/sysctl.conf` ] ; then sed -i 's/^.*vm.max_map_count.*/vm.max_map_count = 262144/g' /etc/sysctl.conf && sysctl -p ; else echo "vm.max_map_count = 262144" | tee -a /etc/sysctl.conf && sysctl -p ; fi
+
+~~~
+
+
 
