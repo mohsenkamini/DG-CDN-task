@@ -8,6 +8,7 @@ Subnet: `172.25.0.0/16`
 - **Between client and ISP router**
 
   - range: `172.25.0.0/24`
+  - network name: `client_side`
 
 Hosts:
 
@@ -20,6 +21,7 @@ Hosts:
 - **Between the ISP router and Edge router**
 
   - range: `172.25.1.0/24`
+  - network name: `bgp_side`
 
 Hosts:
 
@@ -34,6 +36,7 @@ Hosts:
 
 
   - range: `172.25.2.0/24`
+  - network name: `server_side`
 
 Hosts:
 
