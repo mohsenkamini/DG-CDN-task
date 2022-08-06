@@ -42,9 +42,18 @@ Hosts:
 
 | Host | IP |
 |---|---|
-| Edge Server | 172.25.1.1 |
+| Edge Server | 172.25.2.1 |
+| nginx-reverse-proxy | 172.25.2.2 |
+| elasticsearch | 172.25.2.3 |
+| kibana | 172.25.2.4 |
+| nginx-web-server | 172.25.2.5 |
+
+
 
 Other instances will receive their IP addresses from DHCP.
+
+
+### Implementation
 
 
 
