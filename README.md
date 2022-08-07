@@ -48,8 +48,8 @@ Hosts:
 | elasticsearch(es02) | 172.25.2.4 |
 | kibana | 172.25.2.5 |
 | prometheus-web-server | 172.25.2.6 |
-| filebeat | 172.25.2.7 |
-
+| fb01 | 172.25.2.7 |
+| fb02 | 172.25.2.8 |
 
 Other instances will receive their IP addresses from DHCP.
 
