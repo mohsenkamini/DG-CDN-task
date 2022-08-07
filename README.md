@@ -72,3 +72,11 @@ kibana.yml
 filebeat.yml
 docker-compose.yml for kibana
 
+
+### test rate limit
+
+~~~
+cd reverse_proxy/
+python3 pyflooder.py localhost 80 1000
+~~~
+
