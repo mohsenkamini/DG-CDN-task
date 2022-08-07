@@ -66,3 +66,9 @@ if [ `grep 'vm.max_map_count' /etc/sysctl.conf` ] ; then sed -i 's/^.*vm.max_map
 
 
 
+### Passwords
+
+kibana.yml
+filebeat.yml
+docker-compose.yml for kibana
+
