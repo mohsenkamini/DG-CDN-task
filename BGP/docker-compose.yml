@@ -7,7 +7,6 @@ services:
     image: bird:ubuntu-20.04
     cap_add:
       - NET_ADMIN
-      - NET_BIND_SERVICE
       - NET_BROADCAST
       - NET_RAW
     sysctls:
@@ -23,15 +22,17 @@ services:
         ipv4_address: 172.25.2.1
       bgp_side:
         ipv4_address: 172.25.1.1
-    command: sleep 1000000
+    expose:
+      - 179
+    volumes:
+      - ./edge-server.conf:/etc/bird/bird.conf
+    command: sleep 1000000000
+      #command: bird -c /etc/bird/bird.conf
 
   ISP-Router:
     image: bird:ubuntu-20.04
-    build:
-      context: .
     cap_add:
       - NET_ADMIN
-      - NET_BIND_SERVICE
       - NET_BROADCAST
       - NET_RAW
     sysctls:
@@ -47,7 +48,12 @@ services:
         ipv4_address: 172.25.1.2
       client_side:
         ipv4_address: 172.25.0.1
-    command: sleep 1000000
+    expose:
+      - 179
+    volumes:
+      - ./isp-router.conf:/etc/bird/bird.conf
+    command: sleep 1000000000
+      #command: bird -c /etc/bird/bird.conf
 
 
 networks:
