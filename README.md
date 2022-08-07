@@ -27,8 +27,8 @@ Hosts:
 
 | Host | IP |
 |---|---|
-| ISP Router | 172.25.1.1 |
-| Edge Server | 172.25.1.2 |
+| Edge Server | 172.25.1.1 |
+| ISP Router | 172.25.1.2 |
 
 
 
