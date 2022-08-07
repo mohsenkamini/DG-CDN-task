@@ -47,7 +47,8 @@ Hosts:
 | elasticsearch(es01) | 172.25.2.3 |
 | elasticsearch(es02) | 172.25.2.4 |
 | kibana | 172.25.2.5 |
-| nginx-web-server | 172.25.2.6 |
+| prometheus-web-server | 172.25.2.6 |
+| filebeat | 172.25.2.7 |
 
 
 Other instances will receive their IP addresses from DHCP.
