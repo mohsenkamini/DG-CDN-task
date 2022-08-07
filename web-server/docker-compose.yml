@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
+    expose:
+      - 9100
+    networks:
+      external:
+        ipv4_address: 172.25.2.6
+
+networks:
+  external:
+    external: true
+    name: server_side
+

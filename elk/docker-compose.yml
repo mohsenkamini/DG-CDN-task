@@ -2,6 +2,8 @@ version: '2.2'
 
 services:
   es01:
+    cap_add:
+      - NET_ADMIN
     image: elasticsearch:${STACK_VERSION}
     restart: unless-stopped
     container_name: es01
