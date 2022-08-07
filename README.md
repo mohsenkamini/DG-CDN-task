@@ -80,3 +80,9 @@ cd reverse_proxy/
 python3 pyflooder.py localhost 80 1000
 ~~~
 
+### cache purge
+
+e.g:
+~~~
+docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh main.ec237bfc.css /cache '
+~~~
