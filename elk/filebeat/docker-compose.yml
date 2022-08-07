@@ -19,6 +19,26 @@ services:
     networks:
       external:
         ipv4_address: 172.25.2.7
+
+  fb02:
+    image: elastic/filebeat:${VERSION}
+    restart: unless-stopped
+    container_name: fb02
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/data01/filebeat.docker.error.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers/:/var/lib/docker/containers/:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/docker/volumes/reverse_proxy_log/_data/:/var/log/nginx/:ro
+    networks:
+      external:
+        ipv4_address: 172.25.2.8
+
 volumes:
   filebeatdashboards:
     driver: local

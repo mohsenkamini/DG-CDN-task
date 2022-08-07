@@ -4,16 +4,16 @@ filebeat.config:
     reload.enabled: false
 filebeat.modules:
   - module: nginx
-    access:
+    error:
       enabled: true
-      var.paths: ["/var/log/nginx/access_log"]
+      var.paths: ["/var/log/nginx/error_log"]
 
 setup.ilm.enabled: auto
-setup.ilm.rollover_alias: "filebeat-access"
+setup.ilm.rollover_alias: "filebeat-error"
 setup.ilm.pattern: "{now/d}-000001" 
-output.elasticsearch.index: "filebeat-access%{[agent.version]}-%{+yyyy.MM.dd}"
-setup.template.name: "filebeat-access"
-setup.template.pattern: "filebeat-access*"
+output.elasticsearch.index: "filebeat-error%{[agent.version]}-%{+yyyy.MM.dd}"
+setup.template.name: "filebeat-error"
+setup.template.pattern: "filebeat-error*"
 output.elasticsearch:
   ssl.enabled: false
   hosts: http://es01:9200 
