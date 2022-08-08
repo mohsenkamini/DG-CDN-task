@@ -4,6 +4,7 @@ source .setup-lib.sh
 
 
 ## MAIN SECTION
+install_docker_compose
 create_networks
 set_vm_map_count
 install_prometheus
