@@ -71,7 +71,7 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.license.self_generated.type=basic # <1>
         #- xpack.security.enabled=true      
-      - xpack.security.enabled=false      
+      - xpack.security.enabled=false     
         #- xpack.security.http.ssl.enabled=true # <2>
       - xpack.security.http.ssl.enabled=false # <2>
         #      - xpack.security.http.ssl.key=$CERTS_DIR/es01/es01.key
@@ -149,7 +149,7 @@ services:
       ELASTICSEARCH_URL: http://es01:9200
       ELASTICSEARCH_HOSTS: http://es01:9200
       ELASTICSEARCH_USERNAME: kibana_system
-      ELASTICSEARCH_PASSWORD: FjzDzAmgo4rLeY1EqLjH
+      ELASTICSEARCH_PASSWORD: ${ELASTICSEARCH_PASSWORD}
         #ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES: $CERTS_DIR/ca/ca.crt
         #SERVER_SSL_ENABLED: "true"
       SERVER_SSL_ENABLED: "false"
