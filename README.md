@@ -21,7 +21,7 @@
 
 ### Design
 
-This the overview of how micro-services in the stack we're going to bring up, are connected and interact with each other :
+This the overview of how micro-services in the stack we're going to bring up, connect and interact with each other :
 
 ![image](https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png)
 
