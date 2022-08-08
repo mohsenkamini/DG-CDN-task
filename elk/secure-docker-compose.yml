@@ -159,6 +159,44 @@ services:
     networks:
       elastic:
         ipv4_address: 172.25.2.5
+  fb01:
+    build: .
+    image: elastic/filebeat:${STACK_VERSION}
+    restart: unless-stopped
+    container_name: fb01
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+      - certs:/crts/
+        #- /var/run/docker.sock:/var/run/docker.sock:ro
+      - reverse_proxy_log:/var/log/nginx/:ro
+    networks:
+      elastic:
+        ipv4_address: 172.25.2.7
+
+  fb02:
+    image: elastic/filebeat:${STACK_VERSION}
+    restart: unless-stopped
+    container_name: fb02
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/filebeat.docker.error.yml:/usr/share/filebeat/filebeat.yml:ro
+      - certs:/crts/
+        #- /var/run/docker.sock:/var/run/docker.sock:ro
+      - reverse_proxy_log:/var/log/nginx/:ro
+    networks:
+      elastic:
+        ipv4_address: 172.25.2.8
 
          
 volumes:
@@ -168,6 +206,8 @@ volumes:
     driver: local
   certs:
     driver: local
+  reverse_proxy_log:
+    external: true
 
 networks: 
   elastic:

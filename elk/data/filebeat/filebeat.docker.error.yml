@@ -1,0 +1,23 @@
+filebeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false
+filebeat.modules:
+  - module: nginx
+    error:
+      enabled: true
+      var.paths: ["/var/log/nginx/error_log"]
+
+setup.ilm.enabled: auto
+setup.ilm.rollover_alias: "filebeat-error"
+setup.ilm.pattern: "{now/d}-000001" 
+output.elasticsearch.index: "filebeat-error%{[agent.version]}-%{+yyyy.MM.dd}"
+setup.template.name: "filebeat-error"
+setup.template.pattern: "filebeat-error*"
+output.elasticsearch:
+  #  ssl.certificate_authorities: ["/crts/ca.crt"]
+  hosts: https://es01:9200 
+  username: elastic
+  password: pIsB3mkrFOTMLhfcVs8D
+setup.kibana.host: 'https://kib01:5601'
+setup.dashboards.enabled: true
