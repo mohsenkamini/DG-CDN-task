@@ -9,6 +9,7 @@ confirmate () {
      *)
        read -r -p "This will delete all your docker containers,images and volumes. Are you SURE you want to do this?[y/n] " "ans"
        ;;
+  esac
 }
 
 
@@ -34,4 +35,5 @@ case $ans in
     echo "only y or n is acceptable"
     exit 1
     ;;
+esac
 

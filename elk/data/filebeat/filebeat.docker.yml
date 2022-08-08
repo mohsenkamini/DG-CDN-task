@@ -18,6 +18,6 @@ output.elasticsearch:
   #  ssl.enabled: false
   hosts: https://es01:9200 
   username: elastic
-  password: STzn4nfEwWB1LE4K1l7C
+  password: rtT2bgPkV5lHvasY5GI9
     #setup.kibana.host: 'https://kib01:5601'
     #setup.dashboards.enabled: true
