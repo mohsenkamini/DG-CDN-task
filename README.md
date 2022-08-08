@@ -55,6 +55,16 @@ Elastic different indicec: [https://localhost:5601/app/management/data/index_man
 ![image](https://user-images.githubusercontent.com/77579794/183501454-3a9fb944-3e6c-4f0d-9da8-3be9e28ca33f.png)
 
 
+- **STEP 5:** On ELK side, create a retention mechanism to delete logs after X days/hours.
+
+`This should've been an automated process using API but I'm out of time :)` so
+click on the delete button
+![image](https://user-images.githubusercontent.com/77579794/183516557-f7f9d156-c199-4aa1-8ebe-a073c607f4a9.png)
+
+scroll down and set delete policy of your choice
+![image](https://user-images.githubusercontent.com/77579794/183516812-40e332d3-70e1-4427-9f3f-00a9440daa51.png)
+
+
 ### Clean up
 
 You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
