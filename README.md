@@ -57,6 +57,9 @@ To test the functionality of the stack you can make use of `test.sh` script. Thi
   - http flood test  **(STEP 5)**
   - cache purge **(STEP 5)**
 
+
+### Manual Tests
+
 - You need to check ELK stack and its results from the GUI.**(STEP 4)**
 
 `Kibana` is accessible from [https://localhost:5601](https://localhost:5601) and filebeat dashboards are all added to it.
@@ -102,7 +105,7 @@ scroll down and set delete policy of your choice
 - You can also access the web server through nginx(on port **80** which is proxied to the exposed 9090 port on the container): [http://localhost](http://localhost)
 ![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
 
-### Manual Tests
+
 
 as these two were specifically mentioned in the document here's how to make use of them :
 
