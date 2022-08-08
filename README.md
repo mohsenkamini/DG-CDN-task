@@ -4,7 +4,7 @@
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Initial Setup](#initial-setup)
-  - [Put It To Test (Automated)](#put-it-to-test-automated)
+  - [Put It to Test (Automated)](#put-it-to-test-automated)
   - [Manual Tests](#manual-tests)
   - [Clean up](#clean-up)
 - [Details](#details)
@@ -12,7 +12,7 @@
   - [Networking](#networking) 
 - [Wrap up](#wrap-up)
   - [Know Issues](#know-issues) 
-  - [What to Ignore](#What to Ignore) 
+  - [What To Ignore](#what-to-ignore) 
   - [Not Included Cases](#not-included-cases) 
 
 ---
@@ -47,7 +47,7 @@ cd ./DG-CDN-task/
   - pulls docker images
   - Runs docker containers and configure them if needed
 
-### Put It To Test (Automated)
+### Put It to Test (Automated)
 
 To test the functionality of the stack you can make use of `test.sh` script. This script runs tests against the stack and brings you back information and tells you what part of the document it's testing.
 - quick overview of `test.sh`:
@@ -120,7 +120,7 @@ docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
 ~~~
 
 
-### Clean Up
+### Clean up
 
 You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
 ~~~
