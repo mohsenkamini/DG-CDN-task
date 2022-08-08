@@ -78,7 +78,8 @@ Hosts:
 
 ### Visibility
 
-This table explains how each service should be visible and the host.
+This table explains how each service should be visible to the host and the client.
+
 | Service | Visibility endpoint | Visibile to client | Visible to host |
 |---|---|---|---|
 | web server(behind reverse proxy) | 172.25.2.2:80 or localhost:80 | :heavy_check_mark: | :heavy_check_mark: |
