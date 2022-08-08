@@ -30,6 +30,8 @@ services:
     command: bird -c /etc/bird/bird.conf -f
 
   ISP-Router:
+    build:
+      context: .
     image: bird:ubuntu-20.04
     cap_add:
       - NET_ADMIN
