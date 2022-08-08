@@ -31,8 +31,15 @@ cd ./DG-CDN-task/
   - pulls docker images
   - Runs docker containers and configure them if needed
 
+### Put it to test
 
 
+### Clean up
+
+You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
+
+
+# Details
 
 ### networking 
 
@@ -83,27 +90,6 @@ Hosts:
 | prometheus | 172.25.2.6 |
 | fb01 | 172.25.2.7 |
 | fb02 | 172.25.2.8 |
-
-Other instances will receive their IP addresses from DHCP.
-
-
-### Implementation
-
-
-~~~
-./network-create.sh
-
-if [ `grep 'vm.max_map_count' /etc/sysctl.conf` ] ; then sed -i 's/^.*vm.max_map_count.*/vm.max_map_count = 262144/g' /etc/sysctl.conf && sysctl -p ; else echo "vm.max_map_count = 262144" | tee -a /etc/sysctl.conf && sysctl -p ; fi
-
-~~~
-
-
-
-### Passwords
-
-kibana.yml
-filebeat.yml
-docker-compose.yml for kibana
 
 
 ### test rate limit
