@@ -85,3 +85,12 @@ e.g:
 ~~~
 docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh main.ec237bfc.css /cache '
 ~~~
+
+
+### Know Issues
+
+
+~~~
+Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
+
+~~~
