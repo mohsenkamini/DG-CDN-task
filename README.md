@@ -1,14 +1,14 @@
 # Digikala Infrastructure -CDNTask Assignment
 # 📖 Documentation
 -----
+- [Overview](#overview)
+  - [Design](#design) 
+  - [Networking](#networking) 
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Initial Setup](#initial-setup)
   - [Put It to Test (Automated)](#put-it-to-test-automated)
   - [Manual Tests](#manual-tests)
-- [Details](#details)
-  - [Design](#design) 
-  - [Networking](#networking) 
 - [Wrap up](#wrap-up)
   - [Know Issues](#know-issues) 
   - [What To Ignore](#what-to-ignore) 
@@ -16,6 +16,68 @@
   - [Clean up](#clean-up)
 
 ---
+# Overview
+
+### Design
+
+How each micro-service is connected to one another:
+
+![image](https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png)
+
+
+### Networking 
+
+Subnet: `172.25.0.0/16`
+
+- **Between client and ISP router**
+
+  - range: `172.25.0.0/24`
+  - network name: `client_side`
+
+Hosts:
+
+| Host | IP |
+|---|---|
+| ISP Router | 172.25.0.1 |
+| Client | 172.25.0.2 |
+
+
+- **Between the ISP router and Edge router**
+
+  - range: `172.25.1.0/24`
+  - network name: `bgp_side`
+
+Hosts:
+
+| Host | IP |
+|---|---|
+| Edge Server | 172.25.1.1 |
+| ISP Router | 172.25.1.2 |
+
+
+
+- **Between the Edge router, webserver, and logger**
+
+
+  - range: `172.25.2.0/24`
+  - network name: `server_side`
+
+Hosts:
+
+| Host | IP |
+|---|---|
+| Edge Server | 172.25.2.1 |
+| nginx-reverse-proxy | 172.25.2.2 |
+| es01(elasticsearch) | 172.25.2.3 |
+| es02(elasticsearch) | 172.25.2.4 |
+| kib01 (kibana) | 172.25.2.5 |
+| prometheus | 172.25.2.6 |
+| fb01 | 172.25.2.7 |
+| fb02 | 172.25.2.8 |
+
+---
+
+
 # Setup
 
 ### Requirements
@@ -119,66 +181,6 @@ docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh < file name or url >
 docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
 ~~~
 
-
----
-# Details
-
-### Design
-
-How each micro-service is connected to one another:
-
-![image](https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png)
-
-
-### Networking 
-
-Subnet: `172.25.0.0/16`
-
-- **Between client and ISP router**
-
-  - range: `172.25.0.0/24`
-  - network name: `client_side`
-
-Hosts:
-
-| Host | IP |
-|---|---|
-| ISP Router | 172.25.0.1 |
-| Client | 172.25.0.2 |
-
-
-- **Between the ISP router and Edge router**
-
-  - range: `172.25.1.0/24`
-  - network name: `bgp_side`
-
-Hosts:
-
-| Host | IP |
-|---|---|
-| Edge Server | 172.25.1.1 |
-| ISP Router | 172.25.1.2 |
-
-
-
-- **Between the Edge router, webserver, and logger**
-
-
-  - range: `172.25.2.0/24`
-  - network name: `server_side`
-
-Hosts:
-
-| Host | IP |
-|---|---|
-| Edge Server | 172.25.2.1 |
-| nginx-reverse-proxy | 172.25.2.2 |
-| es01(elasticsearch) | 172.25.2.3 |
-| es02(elasticsearch) | 172.25.2.4 |
-| kib01 (kibana) | 172.25.2.5 |
-| prometheus | 172.25.2.6 |
-| fb01 | 172.25.2.7 |
-| fb02 | 172.25.2.8 |
 
 ---
 # Wrap up
