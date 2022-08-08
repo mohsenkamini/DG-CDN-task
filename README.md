@@ -41,17 +41,17 @@ To test the functionality of the stack you can make use of `test.sh` script. Thi
   - http_flood_test  **(STEP 5)**
 
 - You need to check ELK stack and its results from the GUI.**(STEP 4)**
-`Kibana` is accessible from [https://localhost:5601](https://localhost:5601)
+
+`Kibana` is accessible from [https://localhost:5601](https://localhost:5601) and filebeat dashboards are all added to it.
+
 for the login credentials you can run:
 ~~~
 grep "elastic" /root/DG-CDN-task/elk/passwords  | awk '{print $4,$5}'
 ~~~
 
 
-access the web server through nginx: [http://localhost](http://localhost)
-![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
-
-
+After you've run `test.sh`, there should be logs of both `access` and `error` from the reverse proxy since you have attacked it with http flood script.
+check out the logs on `Kibana` :
 
 [Filebeat Nginx] Overview ECS: [https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now))](https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now)))
 
@@ -63,9 +63,9 @@ access the web server through nginx: [http://localhost](http://localhost)
 ![image](https://user-images.githubusercontent.com/77579794/183501659-766a6585-2793-4e09-81d0-5048779c39e5.png)
 
 
+- **STEP 4:** check out Elastic different indicec: 
 
-
-Elastic different indicec: [https://localhost:5601/app/management/data/index_management/indices](https://localhost:5601/app/management/data/index_management/indices)
+[https://localhost:5601/app/management/data/index_management/indices](https://localhost:5601/app/management/data/index_management/indices)
 
 ![image](https://user-images.githubusercontent.com/77579794/183501454-3a9fb944-3e6c-4f0d-9da8-3be9e28ca33f.png)
 
@@ -74,10 +74,16 @@ Elastic different indicec: [https://localhost:5601/app/management/data/index_man
 
 `This should've been an automated process using API but I'm out of time :)` so
 click on the delete button
+
 ![image](https://user-images.githubusercontent.com/77579794/183516557-f7f9d156-c199-4aa1-8ebe-a073c607f4a9.png)
 
 scroll down and set delete policy of your choice
+
 ![image](https://user-images.githubusercontent.com/77579794/183516812-40e332d3-70e1-4427-9f3f-00a9440daa51.png)
+
+
+- You can also access the web server through nginx(on port **80** which is proxied to the exposed 9090 port on the container): [http://localhost](http://localhost)
+![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
 
 
 ### Clean up
