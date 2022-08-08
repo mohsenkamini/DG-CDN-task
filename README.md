@@ -1,4 +1,4 @@
-# Digikala Infrastructure -CDNTask Assignment
+# Digikala Infrastructure - CDN Task Assignment
 # 📖 Documentation
 -----
 - [Overview](#overview)
