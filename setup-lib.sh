@@ -1,10 +1,25 @@
 #!/bin/bash
 #set -euxo pipefail 
 
+
+
 install_prometheus () {
 
-	cd 
+	cd ./web-server/
+	docker-compose pull
+	docker-compose up -d 
+	cd - 
 }
+
+install_nginx_reverse_proxy () {
+
+	cd reverse_proxy 
+	docker-compose pull 
+	docker-compose build 
+	docker-compose up -d 
+	cd -
+}
+
 
 
 
