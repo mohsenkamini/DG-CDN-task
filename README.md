@@ -86,16 +86,35 @@ scroll down and set delete policy of your choice
 - You can also access the web server through nginx(on port **80** which is proxied to the exposed 9090 port on the container): [http://localhost](http://localhost)
 ![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
 
+### Manual Tests
+
+as these two were specifically mentioned in the document here's how to make use of them :
+
+- **Cache Purge**
+~~~
+docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh < file name or url > < cache address in the nginx container (/cache in this case) > '
+~~~
+
+- **HTTP Flood**
+~~~
+docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
+~~~
+
 
 ### Clean up
 
 You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
-
+~~~
+./clean_up
+~~~
 
 # Details
 
 ### Design
 
+How each micro-service is connected to one another:
+
+![image](https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png)
 
 
 ### Networking 
@@ -148,19 +167,7 @@ Hosts:
 | fb01 | 172.25.2.7 |
 | fb02 | 172.25.2.8 |
 
-
-### cache purge
-
-~~~
-docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh < file name or url > < cache address in the nginx container (/cache in this case) > '
-~~~
-
-### HTTP Flood
-
-~~~
-docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
-~~~
-
+# Wrap up
 
 ### Know Issues
 
