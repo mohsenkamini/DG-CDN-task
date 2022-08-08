@@ -4,6 +4,7 @@
 - [Overview](#overview)
   - [Design](#design) 
   - [Networking](#networking) 
+  - [Visibility](#visibility)
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Initial Setup](#initial-setup)
