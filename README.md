@@ -40,7 +40,7 @@ To test the functionality of the stack you can make use of `test.sh` script. Thi
   - test_bgp_routes **(STEP 2)**
   - http_flood_test  **(STEP 5)**
 
-- You need to check ELK stack and its results from the GUI.
+- You need to check ELK stack and its results from the GUI.**(STEP 4)**
 `Kibana` is accessible from [https://localhost:5601](https://localhost:5601)
 for the login credentials you can run:
 ~~~
