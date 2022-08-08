@@ -1,6 +1,20 @@
-# DG-CDN-task
+# Digikala Infrastructure -CDNTask Assignment
+# 📖 Documentation
+-----
+- [Setup](#setup)
+  - [Requirements](#requirements)
+  - [Initial Setup](#initial-setup)
+  - [Put it to test](#put-it-to-test)
+  - [Manual Tests](#manual-tests)
+  - [Clean up](#clean-up)
+- [Details](#details)
+  - [](#) 
+  - [](#) 
+  - [](#) 
+  - [](#) 
+- [Wrap up](#wrap-up)
 
-## Setup
+# Setup
 
 ### Requirements
 - The initial setup requires your environment to already have docker engine installed. [install docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
