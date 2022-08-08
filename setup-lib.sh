@@ -33,10 +33,10 @@ install_elk () {
   docker exec es01 /bin/bash -c "bin/elasticsearch-setup-passwords auto --batch --url https://es01:9200" > passwords
   echo "Your passwords are stored in passwords file"
   sed -i "s|KIBANA_ELASTICSEARCH_PASSWORD=.*|KIBANA_ELASTICSEARCH_PASSWORD=`grep "PASSWORD kibana_system" passwords| awk '{print $4}'`|g" .env
+  sed  -i "s|  password:.*|  password: `grep "PASSWORD elastic" passwords| awk '{print $4}'`|g" ./data/filebeat/filebeat.docker*.yml
   cp /var/lib/docker/volumes/dg_certs/_data/ca/ca.crt ./ca.crt
   docker-compose -f secure-docker-compose.yml build
   docker-compose -f secure-docker-compose.yml up -d
-  docker-compose -f secure-docker-compose.yml down
   
 }
 
