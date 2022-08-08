@@ -33,6 +33,21 @@ cd ./DG-CDN-task/
 
 ### Put it to test
 
+To test the functionality of the stack you can make use of `test.sh` script. This script runs tests against the stack and brings you back information and tells you what part of the document it's testing.
+- quick overview of `test.sh`:
+  - check networks 
+  - check web server from client **(STEP 1 & 3)**
+  - test_bgp_routes **(STEP 2)**
+  - http_flood_test  **(STEP 5)**
+
+- You need to check ELK stack and its results from the GUI.
+`Kibana` is accessible from [https://localhost:5601](https://localhost:5601)
+for the login credentials you can run:
+~~~
+grep "elastic" /root/DG-CDN-task/elk/passwords  | awk '{print $4,$5}'
+~~~
+
+
 access the web server through nginx: [http://localhost](http://localhost)
 ![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
 
