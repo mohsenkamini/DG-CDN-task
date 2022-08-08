@@ -44,10 +44,10 @@ Hosts:
 |---|---|
 | Edge Server | 172.25.2.1 |
 | nginx-reverse-proxy | 172.25.2.2 |
-| elasticsearch(es01) | 172.25.2.3 |
-| elasticsearch(es02) | 172.25.2.4 |
-| kibana | 172.25.2.5 |
-| prometheus-web-server | 172.25.2.6 |
+| es01(elasticsearch) | 172.25.2.3 |
+| es02(elasticsearch) | 172.25.2.4 |
+| kib01 (kibana) | 172.25.2.5 |
+| prometheus | 172.25.2.6 |
 | fb01 | 172.25.2.7 |
 | fb02 | 172.25.2.8 |
 
@@ -76,8 +76,7 @@ docker-compose.yml for kibana
 ### test rate limit
 
 ~~~
-cd reverse_proxy/
-python3 pyflooder.py localhost 80 1000
+docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
 ~~~
 
 ### cache purge
