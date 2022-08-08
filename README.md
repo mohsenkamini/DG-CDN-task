@@ -6,7 +6,6 @@
   - [Initial Setup](#initial-setup)
   - [Put It to Test (Automated)](#put-it-to-test-automated)
   - [Manual Tests](#manual-tests)
-  - [Clean up](#clean-up)
 - [Details](#details)
   - [Design](#design) 
   - [Networking](#networking) 
@@ -14,6 +13,7 @@
   - [Know Issues](#know-issues) 
   - [What To Ignore](#what-to-ignore) 
   - [Not Included Cases](#not-included-cases) 
+  - [Clean up](#clean-up)
 
 ---
 # Setup
@@ -120,13 +120,6 @@ docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
 ~~~
 
 
-### Clean up
-
-You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
-~~~
-./clean_up
-~~~
-
 ---
 # Details
 
@@ -208,3 +201,11 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 
 The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is STEP 5: tuning tcp stack.
 which is because of being out of time :)
+
+
+### Clean up
+
+You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
+~~~
+./clean_up
+~~~
