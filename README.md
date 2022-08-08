@@ -4,7 +4,7 @@
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Initial Setup](#initial-setup)
-  - [Put It To Test (Automated)](#put-it-to-test)
+  - [Put It To Test (Automated)](#put-it-to-test-automated)
   - [Manual Tests](#manual-tests)
   - [Clean up](#clean-up)
 - [Details](#details)
