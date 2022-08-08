@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+RUN apt update -y
+RUN apt install -y tcpdump 
+RUN apt install -y mtr
+RUN apt install -y iproute2
+RUN apt install -y curl
+RUN apt install -y python3
+COPY ./pyflooder.py /pyflooder.py
+ENTRYPOINT ip route del default && ip route add default via 172.25.0.1 && sleep 9999999

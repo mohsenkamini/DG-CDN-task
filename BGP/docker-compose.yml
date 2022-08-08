@@ -27,8 +27,7 @@ services:
     volumes:
       - ./edge-server.conf:/etc/bird/bird.conf
       - ./edge-entrypoint.sh:/edge-entrypoint.sh
-    #command: sleep 1000000000
-    command: sh -c "/edge-entrypoint.sh"
+    command: bird -c /etc/bird/bird.conf -f
 
   ISP-Router:
     image: bird:ubuntu-20.04
@@ -55,6 +54,24 @@ services:
       - ./isp-router.conf:/etc/bird/bird.conf
     #command: sleep 1000000000
     command: bird -c /etc/bird/bird.conf -f
+
+  Client:
+    build:
+      context: .
+      dockerfile: Dockerfile-client
+    image: client:ubuntu-20.04
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    container_name: client
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      client_side:
+        ipv4_address: 172.25.0.2
+
 
 
 networks:
