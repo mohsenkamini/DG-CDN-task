@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   Edge-server:
@@ -26,8 +26,9 @@ services:
       - 179
     volumes:
       - ./edge-server.conf:/etc/bird/bird.conf
-        #command: sleep 1000000000
-    command: bird -c /etc/bird/bird.conf 
+      - ./edge-entrypoint.sh:/edge-entrypoint.sh
+    #command: sleep 1000000000
+    command: sh -c "/edge-entrypoint.sh"
 
   ISP-Router:
     image: bird:ubuntu-20.04
@@ -52,8 +53,8 @@ services:
       - 179
     volumes:
       - ./isp-router.conf:/etc/bird/bird.conf
-        #command: sleep 1000000000
-    command: bird -c /etc/bird/bird.conf 
+    #command: sleep 1000000000
+    command: bird -c /etc/bird/bird.conf -f
 
 
 networks:
