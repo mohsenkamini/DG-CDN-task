@@ -1,6 +1,40 @@
 #!/bin/bash
 #set -euxo pipefail 
 
+
+
+create_networks () {
+
+docker network create \
+  --driver=bridge \
+  --subnet=172.25.0.0/24 \
+  --ip-range=172.25.0.0/24 \
+  --gateway=172.25.0.254 \
+  client_side
+
+docker network create \
+  --driver=bridge \
+  --subnet=172.25.1.0/24 \
+  --ip-range=172.25.1.0/24 \
+  --gateway=172.25.1.254 \
+  bgp_side
+
+docker network create \
+  --driver=bridge \
+  --subnet=172.25.2.0/24 \
+  --ip-range=172.25.2.0/24 \
+  --gateway=172.25.2.254 \
+  server_side
+}
+
+set_vm_map_count () {
+
+	if [ `grep 'vm.max_map_count' /etc/sysctl.conf` ] ; then sed -i 's/^.*vm.max_map_count.*/vm.max_map_count = 262144/g' /etc/sysctl.conf && sysctl -p ; else echo "vm.max_map_count = 262144" | tee -a /etc/sysctl.conf && sysctl -p ; fi 
+
+}
+
+
+
 install_prometheus () {
 
 	cd ./web-server/
