@@ -75,6 +75,18 @@ Hosts:
 | fb01 | 172.25.2.7 |
 | fb02 | 172.25.2.8 |
 
+
+### Visibility
+
+This table explains how each service should be visible and the host.
+| Service | Visibility endpoint | Visibile to client | Visible to host |
+|---|---|---|---|
+| web server(behind reverse proxy) | 172.25.2.2:80 or localhost:80 | :heavy_check_mark: | :heavy_check_mark: |
+| web server(NOT behind reverse proxy) | 172.25.2.6:9090 | :x: no routes on the way back | :x: not exposed on the host |
+| kibana | https://localhost | :x: no routes on the way back | :heavy_check_mark: |
+| es01 | https://localhost:9200,9300 | :x: no routes on the way back | :heavy_check_mark: |
+| es02 | inside the docker network on port 9200,9300 | :x: no routes on the way back | :heavy_check_mark: |
+
 ---
 
 
