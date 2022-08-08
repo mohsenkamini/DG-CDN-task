@@ -130,7 +130,37 @@ services:
           #    networks:
           #      elastic:
           #        ipv4_address: 172.25.2.4
-          
+  kib01:
+    image: kibana:${STACK_VERSION}
+    restart: unless-stopped
+    container_name: kib01
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+          #    expose:
+          #      - "5601"    
+    ports:
+      - '5601:5601'   
+    environment:
+      SERVERNAME: localhost
+      ELASTICSEARCH_URL: https://es01:9200
+      ELASTICSEARCH_HOSTS: https://es01:9200
+      ELASTICSEARCH_USERNAME: kibana_system
+      ELASTICSEARCH_PASSWORD: ${KIBANA_ELASTICSEARCH_PASSWORD}
+      ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES: $CERTS_DIR/ca/ca.crt
+      SERVER_SSL_ENABLED: "true"
+        #SERVER_SSL_ENABLED: "false"
+      SERVER_SSL_KEY: $CERTS_DIR/kib01/kib01.key
+      SERVER_SSL_CERTIFICATE: $CERTS_DIR/kib01/kib01.crt
+    volumes: 
+      - certs:$CERTS_DIR
+      - ./data/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    networks:
+      elastic:
+        ipv4_address: 172.25.2.5
+
+         
 volumes:
   data01:
     driver: local

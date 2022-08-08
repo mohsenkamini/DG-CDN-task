@@ -1,5 +1,12 @@
 #!/bin/bash
-set -euxo pipefall 
+#set -euxo pipefail 
+
+install_prometheus () {
+
+	cd 
+}
+
+
 
 
 install_elk () {

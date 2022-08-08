@@ -11,9 +11,9 @@ server.publicBaseUrl: http://es01:5601
   #xpack.encryptedSavedObjects:
   #  encryptionKey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINRwVlxw7242xHQRgcQjAY6uRzFno1KvyxKjnnnC5Eil"
 xpack.security.authc.providers:
-  anonymous.anonymous1:
-    order: 0
-    credentials: "elasticsearch_anonymous_user"
+  #  anonymous.anonymous1:
+    #    order: 0
+    #    credentials: "elasticsearch_anonymous_user"
   basic.basic1:
-    order: 1
+    order: 0
 xpack.security.sameSiteCookies: "None"
