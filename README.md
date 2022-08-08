@@ -210,13 +210,15 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 
 ### What to Ignore
 
-- There are some other `README.md` and documents in this repo which show a bit about what that directories doing, but they are not entirely true because of the changes made in this repo and not updating them after.
+- There are some other `README.md` and documents in this repo which show a bit about what those directories are doing, but they are not entirely true because of the changes made in this repo and them not being updating after.
 
 
 ### Not Included Cases
 
 The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is STEP 5: tuning tcp stack.
-which is because of being out of time :)
+which is due to the lack of time :)
+
+I would be happy to be working on it at a later time.
 
 
 ### Clean up
