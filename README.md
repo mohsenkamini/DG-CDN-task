@@ -37,8 +37,9 @@ To test the functionality of the stack you can make use of `test.sh` script. Thi
 - quick overview of `test.sh`:
   - check networks 
   - check web server from client **(STEP 1 & 3)**
-  - test_bgp_routes **(STEP 2)**
-  - http_flood_test  **(STEP 5)**
+  - test bgp routes **(STEP 2)**
+  - http flood test  **(STEP 5)**
+  - cache purge **(STEP 5)**
 
 - You need to check ELK stack and its results from the GUI.**(STEP 4)**
 
@@ -93,7 +94,11 @@ You can clean up your system with the `clean_up.sh` script. although you should 
 
 # Details
 
-### networking 
+### Design
+
+
+
+### Networking 
 
 Subnet: `172.25.0.0/16`
 
@@ -144,17 +149,16 @@ Hosts:
 | fb02 | 172.25.2.8 |
 
 
-### test rate limit
+### cache purge
+
+~~~
+docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh < file name or url > < cache address in the nginx container (/cache in this case) > '
+~~~
+
+### HTTP Flood
 
 ~~~
 docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
-~~~
-
-### cache purge
-
-e.g:
-~~~
-docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh main.ec237bfc.css /cache '
 ~~~
 
 
@@ -166,3 +170,8 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 ~~~
 
 - If encountered a connection error while pulling images or installing packages, Please consider checking your conncetion or trying a different `VPN` and just run the `setup.sh` script again.
+
+### Not included cases
+
+The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is STEP 5: tuning tcp stack.
+which is because of being out of time :)
