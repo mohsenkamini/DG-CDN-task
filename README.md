@@ -33,6 +33,22 @@ cd ./DG-CDN-task/
 
 ### Put it to test
 
+[Filebeat Nginx] Overview ECS: [https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now))](https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now)))
+
+![image](https://user-images.githubusercontent.com/77579794/183501571-ef856e77-5192-4e19-99cd-18163db5e769.png)
+
+
+[Filebeat Nginx] Access and error logs ECS: [https://localhost:5601/app/dashboards#/view/046212a0-a2a1-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now))](https://localhost:5601/app/dashboards#/view/046212a0-a2a1-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now)))
+
+![image](https://user-images.githubusercontent.com/77579794/183501659-766a6585-2793-4e09-81d0-5048779c39e5.png)
+
+
+
+
+Elastic different indicec: [https://localhost:5601/app/management/data/index_management/indices](https://localhost:5601/app/management/data/index_management/indices)
+
+![image](https://user-images.githubusercontent.com/77579794/183501454-3a9fb944-3e6c-4f0d-9da8-3be9e28ca33f.png)
+
 
 ### Clean up
 
