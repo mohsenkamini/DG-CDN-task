@@ -23,7 +23,6 @@ services:
       elastic:
         ipv4_address: 172.25.2.2
 
-          #    command: "/bin/sh -c '/nginx-entrypoint.sh'"
 
 networks:
     elastic:
