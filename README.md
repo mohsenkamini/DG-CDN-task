@@ -108,7 +108,7 @@ docker exec -it nginx_reverse_proxy sh -c '/cache_purger.sh main.ec237bfc.css /c
 
 ### Know Issues
 
-
+- if you encounter the following error, you could just ignore it.
 ~~~
 Error: Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
 
