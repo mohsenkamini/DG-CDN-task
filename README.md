@@ -33,6 +33,11 @@ cd ./DG-CDN-task/
 
 ### Put it to test
 
+access the web server through nginx: [http://localhost](http://localhost)
+![image](https://user-images.githubusercontent.com/77579794/183503350-945c9198-840d-45d9-bffb-bd56d20d0688.png)
+
+
+
 [Filebeat Nginx] Overview ECS: [https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now))](https://localhost:5601/app/dashboards#/view/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs?_g=(filters:!(),refreshInterval:(pause:!t,value:10000),time:(from:now-15m,to:now)))
 
 ![image](https://user-images.githubusercontent.com/77579794/183501571-ef856e77-5192-4e19-99cd-18163db5e769.png)
