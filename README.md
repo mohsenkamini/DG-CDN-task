@@ -16,12 +16,23 @@
 
 There's a script which will do all the setup work for you.
 You just need to run the following commands with `root`:
+
 ~~~
+cd /root/
 git clone git@github.com:mohsenkamini/DG-CDN-task.git
+cd ./DG-CDN-task/
+./setup.sh
 ~~~
 
+- This script basically:
 
-If you are interested in what it does, just checkout the `.setup-lib.sh` script
+  - Installs `docker-compsoe` utility 
+  - Creates docker networks
+  - pulls docker images
+  - Runs docker containers and configure them if needed
+
+
+
 
 ### networking 
 
