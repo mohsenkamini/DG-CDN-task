@@ -95,7 +95,7 @@ This table explains how each service should be visible to the host and the clien
 # Setup
 
 ### Requirements
-- The initial setup requires your environment to already have docker engine installed. [install docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- The initial setup requires your environment to already have `docker engine` installed. [install docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 - Since this is a lab project, Please set this up with `root` access so you wouldn't face unexpected problems.
 
