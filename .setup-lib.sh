@@ -31,7 +31,6 @@ install_elk () {
 	cp /var/lib/docker/volumes/dg_certs/_data/ca/ca.crt ./ca.crt
 	docker-compose -f secure-docker-compose.yml build
 	docker-compose -f secure-docker-compose.yml up -d
-	docker-compose -f secure-docker-compose.yml down
 	cd -
   
 }
