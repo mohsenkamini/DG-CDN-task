@@ -4,16 +4,18 @@
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Initial Setup](#initial-setup)
-  - [Put it to test](#put-it-to-test)
+  - [Put It To Test (Automated)](#put-it-to-test)
   - [Manual Tests](#manual-tests)
   - [Clean up](#clean-up)
 - [Details](#details)
-  - [](#) 
-  - [](#) 
-  - [](#) 
-  - [](#) 
+  - [Design](#design) 
+  - [Networking](#networking) 
 - [Wrap up](#wrap-up)
+  - [Know Issues](#know-issues) 
+  - [What to Ignore](#What to Ignore) 
+  - [Not Included Cases](#not-included-cases) 
 
+---
 # Setup
 
 ### Requirements
@@ -45,7 +47,7 @@ cd ./DG-CDN-task/
   - pulls docker images
   - Runs docker containers and configure them if needed
 
-### Put it to test
+### Put It To Test (Automated)
 
 To test the functionality of the stack you can make use of `test.sh` script. This script runs tests against the stack and brings you back information and tells you what part of the document it's testing.
 - quick overview of `test.sh`:
@@ -115,13 +117,14 @@ docker exec -it client python3 pyflooder.py 172.25.2.2 80 1000
 ~~~
 
 
-### Clean up
+### Clean Up
 
 You can clean up your system with the `clean_up.sh` script. although you should notice that this will erase all your docker volumes, containers and images.
 ~~~
 ./clean_up
 ~~~
 
+---
 # Details
 
 ### Design
@@ -181,6 +184,7 @@ Hosts:
 | fb01 | 172.25.2.7 |
 | fb02 | 172.25.2.8 |
 
+---
 # Wrap up
 
 ### Know Issues
@@ -192,7 +196,12 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 
 - If encountered a connection error while pulling images or installing packages, Please consider checking your conncetion or trying a different `VPN` and just run the `setup.sh` script again.
 
-### Not included cases
+### What to Ignore
+
+- There are some other `README.md` and documents in this directroy which show a bit about what that directories doing, but they are not entirely true because of the changes made in this repo and not updating them after.
+
+
+### Not Included Cases
 
 The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is STEP 5: tuning tcp stack.
 which is because of being out of time :)
