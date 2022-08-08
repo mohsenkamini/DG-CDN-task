@@ -1,5 +1,27 @@
 # DG-CDN-task
 
+## Setup
+
+### Requirements
+- The initial setup requires your environment to already have docker engine installed. [install docker for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+- Since this is a lab project, Please set this up with `root` access so you wouldn't face unexpected problems.
+
+- The most resource-greedy part of this project is the `ELK` stack. although for being more resource-frindly we're installing an older version of `7.14.0`. But it is still greedy! so it is recommended to have at least 4GB of RAM on your machine.
+
+- **Make sure** you have a **secure VPN connection** since `ELK` has buckled up on all those sanctions. It is also recommended to have run `docker login` so you wouldn't face any issue during the image pulling process.
+
+
+### Initial Setup
+
+There's a script which will do all the setup work for you.
+You just need to run the following commands with `root`:
+~~~
+git clone git@github.com:mohsenkamini/DG-CDN-task.git
+~~~
+
+
+If you are interested in what it does, just checkout the `.setup-lib.sh` script
 
 ### networking 
 
