@@ -22,7 +22,7 @@
 ### Changes
 - Changes I have made to the base scenario:
 
-  - Instead of working with **VMs**, which each are going to run one or some more processes, I have brought up a micro-service, **containerized** stack. now each of these containers will have their own networking(IP,Gateway,...) and will do only one thing(obviously since they are containers). so they are more in terms of numbers than the VMs in the base scenario. the list of them will be given to you as you read along.
+  - Instead of working with **VMs**, which each are going to run one or some more processes, I have brought up a micro-service, **containerized** stack. now each of these containers will have their own networking(IP,Gateway,...) and will do only one thing(obviously since they are containers). So they are more, in terms of numbers than the VMs in the base scenario. The list of them will be given to you as you read along.
   
   - The above change made me work my way through automation using `docker` and a bunch of `shell` scripts instead of using `vagrant`.
   
