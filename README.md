@@ -225,7 +225,7 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
 
 ### Not Included Cases
 
-The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is STEP 5: tuning tcp stack.
+The only part of the `Digikala CDN Team2020 –Ver 001Digikala Infrastructure -CDNTask Assignment` document i didn't work on, is `STEP 5: tuning tcp stack`.
 which is due to the lack of time :)
 
 I would be happy to be working on it at a later time.
