@@ -1,9 +1,36 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="26.3.0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="27.0.4">
   <diagram name="Page-1" id="fsPeMJHu-EfQhT_ylziV">
-    <mxGraphModel>
+    <mxGraphModel dx="1791" dy="1036" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="kL62APcaQO3cqdGzzoky-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png;" vertex="1" parent="1">
+          <mxGeometry x="190" y="160" width="1030" height="527.02" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kL62APcaQO3cqdGzzoky-3" target="kL62APcaQO3cqdGzzoky-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-3" value="&amp;nbsp;&lt;h1 align=&quot;left&quot;&gt;&amp;nbsp; Client AS&lt;br&gt;&amp;nbsp; (ISP for client)&lt;br&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=bottom;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="720" width="240" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kL62APcaQO3cqdGzzoky-5" target="kL62APcaQO3cqdGzzoky-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-5" value="&amp;nbsp;&lt;h1 align=&quot;left&quot;&gt;&amp;nbsp; Transit AS&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=bottom;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="430" y="720" width="240" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-7" value="&amp;nbsp;&lt;h1 align=&quot;left&quot;&gt;&amp;nbsp; Upstream AS&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=bottom;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="780" y="720" width="240" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kL62APcaQO3cqdGzzoky-9" target="kL62APcaQO3cqdGzzoky-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-9" value="Client" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="865" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kL62APcaQO3cqdGzzoky-12" value="Content Provider" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/database_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="815" width="106.6" height="130" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
