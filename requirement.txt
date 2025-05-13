@@ -1,0 +1,12 @@
+Transit AS and BGP neighbours:
+	customer/provider and what prefixes should be pass to them
+https://chatgpt.com/c/68219227-61d8-8006-9367-b64e60b8b39c
+
+
+BGP speaker 
+Border GW
+Route reflector or full mesh
+BGP is policy based:
+	outbound: highest local preference
+	AS path 
+	Lowest MED
