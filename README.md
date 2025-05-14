@@ -45,6 +45,7 @@ Subnet: `172.25.0.0/16`
   - range: `172.25.0.0/24`
   - network name: `client_side`
 
+
 Hosts:
 
 | Host | IP |
@@ -97,7 +98,10 @@ Hosts:
 | Transit Edge Router | 172.25.3.1 |
 | Upstream Edge Router | 172.25.3.2 |
 
-
+AS Numbers:
+- Upstream: `65000`
+- Transit: `65001`
+- Client: `65002`
 
 
 ### Visibility
