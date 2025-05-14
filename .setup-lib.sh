@@ -22,8 +22,8 @@ docker network create \
   --subnet=172.25.1.0/24 \
   --ip-range=172.25.1.0/24 \
   --gateway=172.25.1.254 \
-  #bgp_side || true
   t-c-network || true
+  #bgp_side || true
 
 docker network create \
   --driver=bridge \
@@ -37,8 +37,8 @@ docker network create \
   --subnet=172.25.3.0/24 \
   --ip-range=172.25.3.0/24 \
   --gateway=172.25.3.254 \
-  #bgp_side || true
   t-u-network || true
+  #bgp_side || true
 
 
 
@@ -55,17 +55,17 @@ set_vm_map_count () {
 install_prometheus () {
 
 	cd ./web-server/
-	docker-compose pull
-	docker-compose up -d 
+	docker compose pull
+	docker compose up -d 
 	cd - 
 }
 
 install_nginx_reverse_proxy () {
 
 	cd reverse_proxy 
-	docker-compose pull 
-	docker-compose build 
-	docker-compose up -d 
+	docker compose pull 
+	docker compose build 
+	docker compose up -d 
 	cd -
 }
 
@@ -89,7 +89,7 @@ install_elk () {
 install_bgp_client () {
 
 	cd BGP
-	docker-compose build 
-	docker-compose up -d 
+	docker compose build 
+	docker compose up -d 
 	cd -
 }

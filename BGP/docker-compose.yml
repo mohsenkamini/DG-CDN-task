@@ -20,8 +20,8 @@ services:
     networks:
       server_side:
         ipv4_address: 172.25.2.1
-      bgp_side:
-        ipv4_address: 172.25.1.1
+      t-u-network:
+        ipv4_address: 172.25.3.2
     expose:
       - 179
     volumes:
@@ -40,16 +40,16 @@ services:
     sysctls:
       - net.ipv4.ip_forward=1 
     restart: unless-stopped
-    container_name: isp-router
+    container_name: edge-transit
     logging:
       options:
         max-size: "10m"
         max-file: "3"
     networks:
-      bgp_side:
+      t-u-network:
+        ipv4_address: 172.25.3.1
+      t-c-network:
         ipv4_address: 172.25.1.2
-      client_side:
-        ipv4_address: 172.25.0.1
     expose:
       - 179
     volumes:
@@ -68,14 +68,14 @@ services:
     sysctls:
       - net.ipv4.ip_forward=1 
     restart: unless-stopped
-    container_name: isp-router
+    container_name: edge-client
     logging:
       options:
         max-size: "10m"
         max-file: "3"
     networks:
-      bgp_side:
-        ipv4_address: 172.25.1.2
+      t-c-network:
+        ipv4_address: 172.25.1.1
       client_side:
         ipv4_address: 172.25.0.1
     expose:
