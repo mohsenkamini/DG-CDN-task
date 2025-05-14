@@ -40,7 +40,7 @@ This the overview of how micro-services in the stack we're going to bring up, co
 
 Subnet: `172.25.0.0/16`
 
-- **Between client and ISP router**
+- **Client AS**
 
   - range: `172.25.0.0/24`
   - network name: `client_side`
@@ -49,26 +49,23 @@ Hosts:
 
 | Host | IP |
 |---|---|
-| ISP Router | 172.25.0.1 |
+| Client Edge Router | 172.25.0.1 |
 | Client | 172.25.0.2 |
 
 
-- **Between the ISP router and Edge router**
+- **Between the Client Edge router and Transit Edge router**
 
   - range: `172.25.1.0/24`
-  - network name: `bgp_side`
+  - network name: `t-c-network`
 
 Hosts:
 
 | Host | IP |
 |---|---|
-| Edge Server | 172.25.1.1 |
-| ISP Router | 172.25.1.2 |
+| Client Edge Router | 172.25.1.1 |
+| Transit Edge Router | 172.25.1.2 |
 
-
-
-- **Between the Edge router, webserver, and logger**
-
+- **Between the Upstream Edge router, webserver, and logger**
 
   - range: `172.25.2.0/24`
   - network name: `server_side`
@@ -79,12 +76,28 @@ Hosts:
 |---|---|
 | Edge Server | 172.25.2.1 |
 | nginx-reverse-proxy | 172.25.2.2 |
-| es01(elasticsearch) | 172.25.2.3 |
-| es02(elasticsearch) | 172.25.2.4 |
-| kib01 (kibana) | 172.25.2.5 |
 | prometheus | 172.25.2.6 |
-| fb01 | 172.25.2.7 |
-| fb02 | 172.25.2.8 |
+
+#| es01(elasticsearch) | 172.25.2.3 |
+#| es02(elasticsearch) | 172.25.2.4 |
+#| kib01 (kibana) | 172.25.2.5 |
+#| fb01 | 172.25.2.7 |
+#| fb02 | 172.25.2.8 |
+
+
+- **Between the Transit Edge router and Upstream Edge router**
+
+  - range: `172.25.3.0/24`
+  - network name: `t-u-network`
+
+Hosts:
+
+| Host | IP |
+|---|---|
+| Transit Edge Router | 172.25.3.1 |
+| Upstream Edge Router | 172.25.3.2 |
+
+
 
 
 ### Visibility
