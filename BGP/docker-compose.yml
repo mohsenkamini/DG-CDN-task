@@ -29,7 +29,7 @@ services:
       - ./edge-entrypoint.sh:/edge-entrypoint.sh
     command: bird -c /etc/bird/bird.conf -f
 
-  ISP-Router:
+  Edge-Transit:
     build:
       context: .
     image: bird:ubuntu-20.04
@@ -53,9 +53,38 @@ services:
     expose:
       - 179
     volumes:
-      - ./isp-router.conf:/etc/bird/bird.conf
+      - ./edge-transit.conf:/etc/bird/bird.conf
     #command: sleep 1000000000
     command: bird -c /etc/bird/bird.conf -f
+
+  Edge-Client:
+    build:
+      context: .
+    image: bird:ubuntu-20.04
+    cap_add:
+      - NET_ADMIN
+      - NET_BROADCAST
+      - NET_RAW
+    sysctls:
+      - net.ipv4.ip_forward=1 
+    restart: unless-stopped
+    container_name: isp-router
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      bgp_side:
+        ipv4_address: 172.25.1.2
+      client_side:
+        ipv4_address: 172.25.0.1
+    expose:
+      - 179
+    volumes:
+      - ./edge-client.conf:/etc/bird/bird.conf
+    #command: sleep 1000000000
+    command: bird -c /etc/bird/bird.conf -f
+
 
   Client:
     build:
@@ -77,12 +106,22 @@ services:
 
 
 networks:
+    t-u-network:
+      external: true
+      name: t-u-network
+    t-c-network:
+      external: true
+      name: t-c-network
     server_side:
       external: true
       name: server_side
-    bgp_side:
-      external: true
-      name: bgp_side
     client_side:
       external: true
       name: client_side
+    #bgp_side:
+    #  external: true
+    #  name: bgp_side
+      
+
+
+
