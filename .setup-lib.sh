@@ -22,7 +22,8 @@ docker network create \
   --subnet=172.25.1.0/24 \
   --ip-range=172.25.1.0/24 \
   --gateway=172.25.1.254 \
-  bgp_side || true
+  #bgp_side || true
+  t-c-network || true
 
 docker network create \
   --driver=bridge \
@@ -30,6 +31,17 @@ docker network create \
   --ip-range=172.25.2.0/24 \
   --gateway=172.25.2.254 \
   server_side || true
+
+docker network create \
+  --driver=bridge \
+  --subnet=172.25.3.0/24 \
+  --ip-range=172.25.3.0/24 \
+  --gateway=172.25.3.254 \
+  #bgp_side || true
+  t-u-network || true
+
+
+
 }
 
 set_vm_map_count () {
