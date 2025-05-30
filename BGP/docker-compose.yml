@@ -5,6 +5,7 @@ services:
     build:
       context: .
     image: bird:ubuntu-20.04
+    pull_policy: missing
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
@@ -33,6 +34,7 @@ services:
     build:
       context: .
     image: bird:ubuntu-20.04
+    pull_policy: missing
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
@@ -61,6 +63,7 @@ services:
     build:
       context: .
     image: bird:ubuntu-20.04
+    pull_policy: missing
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST

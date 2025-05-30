@@ -4,6 +4,7 @@ services:
   nginx:
     build: .
     image: nginx:1.23.1-alpine
+    pull_policy: missing
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
