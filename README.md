@@ -35,6 +35,8 @@ This the overview of how micro-services in the stack we're going to bring up, co
 
 ![image](https://user-images.githubusercontent.com/77579794/183524619-3f9b9520-3302-4bd7-8677-d294d2cde792.png)
 
+changed to:
+![image](https://github.com/user-attachments/assets/32d235cc-4a28-45b4-b44e-567d51e4e9aa)
 
 ### Networking 
 
